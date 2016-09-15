@@ -3,7 +3,7 @@
 # Purpose
 In several cases you will encounter files that don't belong in the repository. Typical examples include:
 * credentials (passwords, usernames, keys)
-* cached filed (.pyc)
+* cached files (.pyc)
 
 Git allows users to add a .gitignore file to their top level directory to ignore these specific files
 
