@@ -136,9 +136,12 @@ Branches can be formed at any commit, and two branches can be merged together by
 
 ![image](photo)
 
-- Now your repo is created! From the home page of your repo, copy the repo URL and clone the repo to your development folder on your local machine.
-`$ git clone https://github.com/jillinsight/git-demo.git`
+- Now your repo is created! From the home page of your repo, copy the repo URL. 
 
+![image](photo)
+
+- Clone the repo to your development folder on your local machine.  
+`$ git clone https://github.com/jillinsight/git-demo.git`
 
 ### Developing on a new branch
 *Create a new branch locally*
