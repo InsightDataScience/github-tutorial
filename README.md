@@ -38,15 +38,21 @@ If these don't work for any reason, try the other options [here](http://git-scm.
 ![git-homepage](img/git-homepage.png)
 
 ### Basic git configuration
-Add your User info, so GitHub recognizes your commits with the following bash commands (and replace Mike's info with your own):  
+- Add your User info, so GitHub recognizes your commits with the following bash commands (and replace Mike's info with your own):  
 `$ git config --global user.name "Jill Insight"`  
 `$ git config --global user.email "jill.insight@gmail.com"`
 
 These global config settings live in ~/.gitconfig and can also be manually edited there.
 
-### Git Clone
-`git clone` this repository to your local machine in your development folder  
-`$ git clone https://github.com/InsightDataScience/github-tutorial.git`
+### Fork and Git Clone
+- Fork the github-tutorial repo by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial)
+
+![image](photo)
+
+- Git clone the repository you just forked to your development folder on your local machine
+`$ git https://github.com/jillinsight/github-tutorial.git`
+
+![image](photo)
 
 # Git Concepts and Vocabulary
 
