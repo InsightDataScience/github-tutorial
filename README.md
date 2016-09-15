@@ -47,12 +47,12 @@ These global config settings live in ~/.gitconfig and can also be manually edite
 ### Fork and Git Clone
 - Fork the github-tutorial repo by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial)
 
-![image](photo)
+![git-fork](img/git-fork.png)
 
 - Git clone the repository you just forked to your development folder on your local machine
 `$ git https://github.com/jillinsight/github-tutorial.git`
 
-![image](photo)
+![git-clone](img/git-clone.png)
 
 # Git Concepts and Vocabulary
 
