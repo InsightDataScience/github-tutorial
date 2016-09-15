@@ -49,8 +49,8 @@ These global config settings live in ~/.gitconfig and can also be manually edite
 
 ![git-fork](img/git-fork.png)
 
-- Git clone the repository you just forked to your development folder on your local machine
-`$ git https://github.com/jillinsight/github-tutorial.git`
+- Git clone the repository you just forked to your development folder on your local machine  
+`$ git clone https://github.com/jillinsight/github-tutorial.git`
 
 ![git-clone](img/git-clone.png)
 
