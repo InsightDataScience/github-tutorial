@@ -128,9 +128,17 @@ Branches can be formed at any commit, and two branches can be merged together by
 `$ git push origin master`
 
 ### Create a GitHub Repo
-- Create a repo on GitHub named `git-demo`
-- Initialize with a Readme
-`git clone` the git-demo repo to your local machine
+- On GitHub create a new repository named `git-demo` by clicking on Respositories, then New from your home page.
+
+![image](photo)
+
+- Initialize with a Readme and add a .gitignore
+
+![image](photo)
+
+- Now your repo is created! From the home page of your repo, copy the repo URL and clone the repo to your development folder on your local machine.
+`$ git clone https://github.com/jillinsight/git-demo.git`
+
 
 ### Developing on a new branch
 *Create a new branch locally*
