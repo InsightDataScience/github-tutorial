@@ -100,6 +100,13 @@ Branches can be formed at any commit, and two branches can be merged together by
 - Use `git push origin master` to push local commits to the remote branch:  
 `$ git push origin master`
 
+### Git Status
+- To check the status of your repo (which branch you're on, which files are untracked, which files are modified, which files are added/tracked), use `git status`
+
+### Git Diff
+- To see how your file has changed before you add/commit the file, use `git diff`
+`$ git diff hello.py`
+
 ## Additional Info
 
 ### Ignore Files in the Repository
@@ -123,7 +130,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 `$ git checkout -b add-excitement`
 
 *Push the new branch to remote*  
-- Push the new branch to remote
+- Push the new branch to remote  
 `$ git push origin add-excitement`
 
 *Commit to a new branch*
@@ -146,6 +153,9 @@ Branches can be formed at any commit, and two branches can be merged together by
 `$ git branch -d add-excitement # local delete`  
 `$ git push origin --delete add-excitement # remote delete`
 
+*Git Branch*
+- To see which branch you're on, use `git branch` or `git status`
+
 ### Pull Requests
 
 *Create a pull request*
@@ -159,10 +169,24 @@ Branches can be formed at any commit, and two branches can be merged together by
 *Accept a pull request*
 - If you are reviewing a pull request, check out the Commits and Files changed to view diffs between the base branch and compare branch.
 - If you are happy with the changes (and there are no conflicts), click Merge pull request and Confirm request. (Don't forget to add a comment telling your co-developer what an awesome job they did!)
-- Delete the branch if it is no longer needed
+- Delete the branch if it is no longer needed (remotely)
 
 *Pull changes to local*
-- Don't forget to pull the changed branch back down to your local machine after a pull request is made
+- Don't forget to pull the changed branch back down to your local machine after a pull request is made. Replace master with the branch you merged into.  
+`$ git pull origin master`
 
+*Delete the local branch*
+- If you deleted the remote branch, delete the local branch
+
+## Best Practices
+
+### When should I commit?
+Ideally you commit “working” code, so that you can return to a working state if necessary. Also, each commit should have one logical task that can be summarized in one phrase.
+
+### When should I push?
+Always right after you commit. Why wouldn’t you want to have an immediate back up?
+
+### Do I have to have commit messages?
+You at least need a descriptive title. This is an important part of code documentation (especially in a multi-developer environment).
 
 *Thank you to Mike Grinolds for his slides and GitHub tutorial!*
