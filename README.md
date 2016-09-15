@@ -98,6 +98,9 @@ Branches can be formed at any commit, and two branches can be merged together by
 - Use `git push origin master` to push local commits to the remote branch:  
 `$ git push origin master`
 
+### Git Status
+- To check the status of your repo (which branch you're on, which files are untracked, which files are modified, which files are added/tracked), use `git status`
+
 ## Additional Info
 
 ### Ignore Files in the Repository
@@ -121,7 +124,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 `$ git checkout -b add-excitement`
 
 *Push the new branch to remote*  
-- Push the new branch to remote
+- Push the new branch to remote  
 `$ git push origin add-excitement`
 
 *Commit to a new branch*
@@ -143,6 +146,9 @@ Branches can be formed at any commit, and two branches can be merged together by
 - If you are done developing on the new branch, delete the branch locally and remotely  
 `$ git branch -d add-excitement # local delete`  
 `$ git push origin --delete add-excitement # remote delete`
+
+*Git Branch*
+- To see which branch you're on, use `git branch` or `git status`
 
 ### Pull Requests
 
