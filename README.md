@@ -157,10 +157,25 @@ Branches can be formed at any commit, and two branches can be merged together by
 *Accept a pull request*
 - If you are reviewing a pull request, check out the Commits and Files changed to view diffs between the base branch and compare branch.
 - If you are happy with the changes (and there are no conflicts), click Merge pull request and Confirm request. (Don't forget to add a comment telling your co-developer what an awesome job they did!)
-- Delete the branch if it is no longer needed
+- Delete the branch if it is no longer needed (remotely)
 
 *Pull changes to local*
-- Don't forget to pull the changed branch back down to your local machine after a pull request is made
+- Don't forget to pull the changed branch back down to your local machine after a pull request is made. Replace master with the branch you merged into.  
+`$ git pull origin master`
+
+*Delete the local branch*
+- If you deleted the remote branch, delete the local branch
+
+## Best Practices
+
+### When should I commit?
+Ideally you commit “working” code, so that you can return to a working state if necessary. Also, each commit should have one logical task that can be summarized in one phrase.
+
+### When should I push?
+Always right after you commit. Why wouldn’t you want to have an immediate back up?
+
+### Do I have to have commit messages?
+You at least need a descriptive title. This is an important part of code documentation (especially in a multi-developer environment).
 
 
 *Thank you to Mike Grinolds for his slides and GitHub tutorial!*
