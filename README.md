@@ -52,8 +52,8 @@ These global config settings live in ~/.gitconfig and can also be manually edite
 
 ### Change (aka Diff)
 
-One of two things:
-1. File creation, renaming, or deletion.
+One of two things:  
+1. File creation, renaming, or deletion.  
 2. Insertion or deletion of a line in a file (a modified line is both an insertion and a deletion)
 
 ![git-hello-diff](img/git-hello-diff.png)
