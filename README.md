@@ -20,7 +20,7 @@
 ### Installing Git
 Git may already be installed. Check to see by running git in a terminal. 
 
-![photo](link)
+![git-cli](img/git-cli.png)
 
 Otherwise:
 - Mac: `brew install git`
@@ -35,7 +35,7 @@ If these don't work for any reason, try the other options [here](http://git-scm.
 - Go to https://github.com/
 - Choose a job-appropriate user name if possible
 
-![photo](link)
+![git-homepage](img/git-homepage.png)
 
 ### Basic git configuration
 Add your User info, so GitHub recognizes your commits with the following bash commands (and replace Mike's info with your own):  
@@ -56,7 +56,7 @@ One of two things:
 1. File creation, renaming, or deletion.
 2. Insertion or deletion of a line in a file (a modified line is both an insertion and a deletion)
 
-![photo](link)
+![git-hello-diff](img/git-hello-diff.png)
 
 ### Commit
 
@@ -64,13 +64,15 @@ A series of changes that records incremental updates to a series of files.
 
 Has a global unique hash (calculated from contents of file) that serves as an identifier.
 
-![photo](link)
+![git-commit](img/git-commit.png)
 
 ### Branch
 
 A linear series of commits.
 
 A codebase can be calculated by applying changes to files in each commit in succession.
+
+![git-commit-history](img/git-commit-history.png)
 
 ### Repository
 
@@ -88,7 +90,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 - Add the file to be tracked by git:  
 `$ git add hello.py` 
 
- ![photo](link)
+ ![git-hello-1](img/git-hello-1.png)
 
 ### Make a Commit
 - Commit the added file to the git repo and add a message describing the change:  
@@ -131,7 +133,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 `$ git commit -m "Add excitement to hello world"`  
 `$ git push origin add-excitement`
 
-![photo](link)
+![git-hello-2](img/git-hello-2.png)
 
 *Merge a new branch*
 - Checkout the branch you want to merge into (preferably the branch you created the new branch off of)
