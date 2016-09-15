@@ -45,11 +45,11 @@ If these don't work for any reason, try the other options [here](http://git-scm.
 These global config settings live in ~/.gitconfig and can also be manually edited there.
 
 ### Fork and Git Clone
-- Fork the github-tutorial repo by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial)
+Fork the github-tutorial repo by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial)
 
 ![git-fork](img/git-fork.png)
 
-- Git clone the repository you just forked to your development folder on your local machine  
+Git clone the repository you just forked to your development folder on your local machine  
 `$ git clone https://github.com/jillinsight/github-tutorial.git`
 
 ![git-clone](img/git-clone.png)
@@ -128,9 +128,20 @@ Branches can be formed at any commit, and two branches can be merged together by
 `$ git push origin master`
 
 ### Create a GitHub Repo
-- Create a repo on GitHub named `git-demo`
-- Initialize with a Readme
-`git clone` the git-demo repo to your local machine
+On GitHub create a new repository named `git-demo` by clicking on Respositories, then New from your home page.
+
+![git-profile](img/git-profile.png)
+
+Initialize with a Readme and add a .gitignore
+
+![git-repo-create](img/git-repo-create.png)
+
+Now your repo is created! From the home page of your repo, copy the repo URL. 
+
+![git-new-repo-clone](img/git-new-repo-clone.png)
+
+Clone the repo to your development folder on your local machine.  
+`$ git clone https://github.com/jillinsight/git-demo.git`
 
 ### Developing on a new branch
 *Create a new branch locally*
