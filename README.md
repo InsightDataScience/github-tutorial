@@ -134,7 +134,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 
 - Initialize with a Readme and add a .gitignore
 
-![git-new-repo](img/git-new-repo.png)
+![git-repo-create](img/git-repo-create.png)
 
 - Now your repo is created! From the home page of your repo, copy the repo URL. 
 
