@@ -144,5 +144,23 @@ Branches can be formed at any commit, and two branches can be merged together by
 `$ git branch -d add-excitement # local delete`  
 `$ git push origin --delete add-excitement # remote delete`
 
+### Pull Requests
+
+*Create a pull request*
+- When developing on a team, you rarely merge branches locally. You will typically merge branches via pull requests.
+- On the GitHub repo, click on Pull requests from the options.
+- Click the New pull request button
+- From the dropdown menu, select the branch you want to serve as your base (the branch you will merge into). Select the branch you want to merge from the compare dropdown.
+- Click Create pull request.
+- Assign someone to review your code and click Create pull request
+
+*Accept a pull request*
+- If you are reviewing a pull request, check out the Commits and Files changed to view diffs between the base branch and compare branch.
+- If you are happy with the changes (and there are no conflicts), click Merge pull request and Confirm request. (Don't forget to add a comment telling your co-developer what an awesome job they did!)
+- Delete the branch if it is no longer needed
+
+*Pull changes to local*
+- Don't forget to pull the changed branch back down to your local machine after a pull request is made
+
 
 *Thank you to Mike Grinolds for his slides and GitHub tutorial!*
