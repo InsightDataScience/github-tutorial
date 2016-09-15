@@ -101,6 +101,10 @@ Branches can be formed at any commit, and two branches can be merged together by
 ### Git Status
 - To check the status of your repo (which branch you're on, which files are untracked, which files are modified, which files are added/tracked), use `git status`
 
+### Git Diff
+- To see how your file has changed before you add/commit the file, use `git diff`
+`$ git diff hello.py`
+
 ## Additional Info
 
 ### Ignore Files in the Repository
@@ -182,6 +186,5 @@ Always right after you commit. Why wouldn’t you want to have an immediate back
 
 ### Do I have to have commit messages?
 You at least need a descriptive title. This is an important part of code documentation (especially in a multi-developer environment).
-
 
 *Thank you to Mike Grinolds for his slides and GitHub tutorial!*
