@@ -98,7 +98,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 
  ![git-hello-1](img/git-hello-1.png)
 
-### Make a Commit
+### Commit the Tracked File
 - Commit the added file to the git repo and add a message describing the change:  
 `$ git commit -m "Initial commit"`  
 
@@ -106,11 +106,13 @@ Branches can be formed at any commit, and two branches can be merged together by
 - Use `git push origin master` to push local commits to the remote branch:  
 `$ git push origin master`
 
-### Git Status
-- To check the status of your repo (which branch you're on, which files are untracked, which files are modified, which files are added/tracked), use `git status`
+### Useful Calls
+**git status**
+- To check the status of your repo (which branch you're on, which files are untracked, which files are modified, which files are added/tracked), use `git status`  
+`$ git status`
 
-### Git Diff
-- To see how your file has changed before you add/commit the file, use `git diff`
+**git diff**
+- To see how your file has changed before you add/commit the file, use `git diff`  
 `$ git diff hello.py`
 
 ## Additional Info
