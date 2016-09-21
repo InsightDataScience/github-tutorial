@@ -18,11 +18,11 @@
 # Setting up Git and GitHub
 
 ### Installing Git
-Git may already be installed. Check to see by running git in a terminal. 
+Git may already be installed. Check to see by running `git` in a terminal. 
 
 ![git-cli](img/git-cli.png)
 
-Otherwise:
+Otherwise in a Terminal, run:
 - Mac: `brew install git`
 - Ubuntu: `apt-get install git`
 - Windows: http://git-scm.com/downloads
@@ -32,25 +32,30 @@ Otherwise:
 If these don't work for any reason, try the other options [here](http://git-scm.com/book/en/Getting-Started-Installing-Git)
 
 ### Creating a GitHub account
-- Go to https://github.com/
+- In a web browser, go to https://github.com/ and create a user account
 - Choose a job-appropriate user name if possible
 
 ![git-homepage](img/git-homepage.png)
 
 ### Basic git configuration
-- Add your User info, so GitHub recognizes your commits with the following bash commands (and replace Mike's info with your own):  
+- In Terminal, add your User info, so GitHub recognizes your commits with the following bash commands (and replace Jill's info with your own):  
 `$ git config --global user.name "Jill Insight"`  
 `$ git config --global user.email "jill.insight@gmail.com"`
 
 These global config settings live in ~/.gitconfig and can also be manually edited there.
 
-### Fork and Git Clone
-Fork the github-tutorial repo by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial)
+### Set up tutorial
+From this page, fork (or make a copy of) this repository, github-tutorial, by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial). Select your account.
 
 ![git-fork](img/git-fork.png)
 
-Git clone the repository you just forked to your development folder on your local machine  
-`$ git clone https://github.com/jillinsight/github-tutorial.git`
+After selecting your account, you should have been sent to the github-tutorial repository you just forked to your account.
+
+Click the green Clone or download button on the right side of the page. Select Use HTTPS if the option is available. Copy the link.
+
+In a Terminal, navigate to your development folder, then clone the github-tutorial repository into your development folder by running the command `git clone` + the link you just copied.
+`$ cd home/your development folder`
+`$ git clone https://github.com/yourusername/github-tutorial.git`
 
 ![git-clone](img/git-clone.png)
 
@@ -58,7 +63,7 @@ Git clone the repository you just forked to your development folder on your loca
 
 ### Change (aka Diff)
 
-One of two things:  
+Git maintains version control by tracking the changes or diffs between file versions. You can change a file by doing one of two things:
 1. File creation, renaming, or deletion.  
 2. Insertion or deletion of a line in a file (a modified line is both an insertion and a deletion)
 
@@ -91,7 +96,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 ## Basic Workflow
 
 ### Add a File to be Tracked by Git
-- Create a python file called `hello.py` using your favorite editor (e.g., `nano hello.py`, `vim hello.py`, `subl hello.py`)
+- In a Terminal, navigate to your repository and create a python file called `hello.py` using your favorite editor (e.g., `nano hello.py`, `vim hello.py`, `subl hello.py`)
 - Write some (very simple) code
 - Add the file to be tracked by git:  
 `$ git add hello.py` 
@@ -119,7 +124,7 @@ Branches can be formed at any commit, and two branches can be merged together by
 
 ### Ignore Files in the Repository
 - Sometimes there are sensitive files you do not want tracked to Github (e.g., passwords)
-- Add file names to the `.gitignore` file to prevent them from being revision controlled.
+- In your repository, add file names to the `.gitignore` file to prevent them from being revision controlled.
 - Make a file called `credentials.json` in your directory
 - Open (or create) the file `.gitignore` and add `credentials.json` to the file. Save and close.
 - Add, commit, and push your changes to the `.gitignore` file:  
