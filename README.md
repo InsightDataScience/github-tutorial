@@ -88,7 +88,7 @@ Clone this repository (the remote repository) to your local machine.
 
 Git maintains version control by tracking the changes or diffs between file versions. 
 
-You can change a file by doing one of two things:
+You can change a file by doing one of two things:  
 1. File creation, renaming, or deletion.  
 2. Insertion or deletion of a line in a file (a modified line is both an insertion and a deletion)
 
@@ -134,8 +134,9 @@ First, create an example file to track using Git.
 - Create a Python file called `hello.py` using your favorite editor
 - Write some (very simple) code.
 
-	```def salutations(name):  
-	print "Hello " + name'
+	```
+	def salutations(name):  
+		print "Hello " + name'
 	```
 
 ### git add
