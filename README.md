@@ -3,8 +3,8 @@
 # Git and GitHub
 
 ### What?
-- **Git:** software which keeps track of code changes
-- **GitHub:** a popular server for storing repositories
+- **Git:** a version control system that keeps track of code changes
+- **GitHub:** a popular server for hosting repositories
 
 ### Why?
 - Keeps a full history of changes
@@ -15,71 +15,100 @@
 ### How?
 - That's what this session is for!
 
-# Setting up Git and GitHub
+# Git and GitHub Setup
 
-### Installing Git
-Git may already be installed. Check to see by running `git` in a terminal. 
+### 1. Create a GitHub account
+
+Create a Github account through the Github website.
+
+- Go to https://github.com/ and follow on-screen instructions to create a user account
+
+- Tip: Choose a job-appropriate user name if possible
+
+<!--![git-homepage](img/git-homepage.png)-->
+
+### 2. Install Git
+
+Install Git on your computer (through Terminal for Mac or Ubuntu).
+
+- Installing on Mac: `$ brew install git`  
+- Installing on Ubuntu: `$ apt-get install git`  
+- Installing on Windows: [http://git-scm.com/downloads](http://git-scm.com/downloads)
+
+- Tip: If you are running into trouble, try [here](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+- Tip: To check if git is already installed, try `$ git` in Terminal
 
 ![git-cli](img/git-cli.png)
 
-Otherwise in a Terminal, run:
-- Mac: `brew install git`
-- Ubuntu: `apt-get install git`
-- Windows: http://git-scm.com/downloads
-	- Default install options
-	- Open the installed Git Bash
+### 3. Configure Git
 
-If these don't work for any reason, try the other options [here](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+Configure Git so that Github can recognize your commits (in Terminal).
 
-### Creating a GitHub account
-- In a web browser, go to https://github.com/ and create a user account
-- Choose a job-appropriate user name if possible
+- Run the following commands in Terminal to configure git:
 
-![git-homepage](img/git-homepage.png)
+	`$ git config --global user.name "[insert your user name here]"`  
+	`$ git config --global user.email "[insert your email here]"`
 
-### Basic git configuration
-- In Terminal, add your User info, so GitHub recognizes your commits with the following bash commands (and replace Jill's info with your own):  
-`$ git config --global user.name "Jill Insight"`  
-`$ git config --global user.email "jill.insight@gmail.com"`
+- Tip: The gloabl config settings can be accessed and manually edited in `~/.gitconfig`
 
-These global config settings live in ~/.gitconfig and can also be manually edited there.
+### 4. Fork the tutorial repository to your account
 
-### Set up tutorial
-From this page, fork (or make a copy of) this repository, github-tutorial, by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial). Select your account.
+Fork the tutorial repository to your account through the Github webpage.
+
+- On the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial), in the top right corner of the page under the photo of your account, click the Fork button (see below for example).
+- Select your account when prompted. This should fork the github-tutorial repository to your account.
+
+Tip: If you successfully forked the tutorial repository, you should see the name of the repository as [your user name]/github-tutorial
 
 ![git-fork](img/git-fork.png)
 
-After selecting your account, you should have been sent to the github-tutorial repository you just forked to your account.
+### 5. Clone the repository to your local machine
 
-Click the green Clone or download button on the right side of the page. Select Use HTTPS if the option is available. Copy the link.
+Clone this repository (the remote repository) to your local machine.
 
-In a Terminal, navigate to your development folder, then clone the github-tutorial repository into your development folder by running the command `git clone` + the link you just copied.
-`$ cd home/your development folder`
-`$ git clone https://github.com/yourusername/github-tutorial.git`
+- On your tutorial repository webpage, click the green "Clone or download" button on the right side of the page.
+- Select the "Use HTTPS" option if it is available.
+- Copy the link.
 
-![git-clone](img/git-clone.png)
+- In Terminal, navigate to your development folder.
+
+	`$ cd [path to your development folder]`
+
+- Type `git clone` into Terminal, followed by the repository link you copied (see below for example)
+	  
+	`$ git clone [link to your forked tutorial repository]`
+
+<!--![git-clone](img/git-clone.png)-->
+
+### You are now ready to use version control with Git and Github!
 
 # Git Concepts and Vocabulary
 
 ### Change (aka Diff)
 
-Git maintains version control by tracking the changes or diffs between file versions. You can change a file by doing one of two things:
+Git maintains version control by tracking the changes or diffs between file versions. 
+
+You can change a file by doing one of two things:
 1. File creation, renaming, or deletion.  
 2. Insertion or deletion of a line in a file (a modified line is both an insertion and a deletion)
 
+Git represents insertions or added changes with a `+` and deletions or removed changes with a `-`
+
 ![git-hello-diff](img/git-hello-diff.png)
+
+Tip: You can use the command `git diff` to see how a file has changed since its last commit or between two branches.
 
 ### Commit
 
-A series of changes that records incremental updates to a series of files.
+Commits are a series of changes that records incremental updates to a series of files.
 
-Has a global unique hash (calculated from contents of file) that serves as an identifier.
+Each commit a global unique hash (calculated from contents of file) that serves as an identifier.
 
 ![git-commit](img/git-commit.png)
 
 ### Branch
 
-A linear series of commits.
+A branch refers to a linear series of commits.
 
 A codebase can be calculated by applying changes to files in each commit in succession.
 
@@ -87,7 +116,7 @@ A codebase can be calculated by applying changes to files in each commit in succ
 
 ### Repository
 
-A tree structure containing many branches. Each branch represents a different state of the code. 
+A repository refers to a tree structure that contains many branches. Each branch represents a different state of the code. 
 
 Branches can be formed at any commit, and two branches can be merged together by summing their changes (assuming there are no conflicts).
 
@@ -95,7 +124,25 @@ Branches can be formed at any commit, and two branches can be merged together by
 
 ## Basic Workflow
 
-### Add a File to be Tracked by Git
+There are three basic commands that part of the typical workflow when doing version control with git. These commands are **add, commit and push**.
+
+### 0. Create a file
+
+First, create an example file to track using Git.
+
+- In Terminal, navigate to your repository folder.
+- Create a Python file called `hello.py` using your favorite editor
+- Write some (very simple) code.
+
+	```def salutations(name):  
+	print "Hello " + name'
+	```
+
+### git add
+
+After making a change to your code, add the file to git to track the change.
+
+
 - In a Terminal, navigate to your repository and create a python file called `hello.py` using your favorite editor (e.g., `nano hello.py`, `vim hello.py`, `subl hello.py`)
 - Write some (very simple) code
 - Add the file to be tracked by git:  
