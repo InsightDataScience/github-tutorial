@@ -4,7 +4,7 @@
 
 ### What?
 - **Git:** a version control system that keeps track of code changes
-- **GitHub:** a popular server for hosting repositories
+- **GitHub:** a popular web-based server for hosting repositories
 
 ### Why?
 - Keeps a full history of changes
