@@ -70,7 +70,7 @@ Clone this repository (the remote repository) to your local machine.
 - Select the "Use HTTPS" option if it is available.
 - Copy the link.
 
-- In Terminal, navigate to your development folder.
+- In Terminal, navigate to your development folder. (Note: If you don't have a development folder, it may be a good idea to create one where you can store all directories tracked by git in one place.)
 
 	`$ cd [path to your development folder]`
 
