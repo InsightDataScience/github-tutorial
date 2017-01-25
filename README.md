@@ -3,8 +3,8 @@
 # Git and GitHub
 
 ### What?
-- **Git:** software which keeps track of code changes
-- **GitHub:** a popular server for storing repositories
+- **Git:** a version control system that keeps track of code changes
+- **GitHub:** a popular server for hosting repositories
 
 ### Why?
 - Keeps a full history of changes
@@ -15,71 +15,100 @@
 ### How?
 - That's what this session is for!
 
-# Setting up Git and GitHub
+# Git and GitHub Setup
 
-### Installing Git
-Git may already be installed. Check to see by running `git` in a terminal. 
+### 1. Create a GitHub account
+
+Create a Github account through the Github website.
+
+- Go to https://github.com/ and follow on-screen instructions to create a user account
+
+- Tip: Choose a job-appropriate user name if possible
+
+<!--![git-homepage](img/git-homepage.png)-->
+
+### 2. Install Git
+
+Install Git on your computer (through Terminal for Mac or Ubuntu).
+
+- Installing on Mac: `$ brew install git`  
+- Installing on Ubuntu: `$ apt-get install git`  
+- Installing on Windows: [http://git-scm.com/downloads](http://git-scm.com/downloads)
+
+- Tip: If you are running into trouble, try [here](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+- Tip: To check if git is already installed, try `$ git` in Terminal
 
 ![git-cli](img/git-cli.png)
 
-Otherwise in a Terminal, run:
-- Mac: `brew install git`
-- Ubuntu: `apt-get install git`
-- Windows: http://git-scm.com/downloads
-	- Default install options
-	- Open the installed Git Bash
+### 3. Configure Git
 
-If these don't work for any reason, try the other options [here](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+Configure Git so that Github can recognize your commits (in Terminal).
 
-### Creating a GitHub account
-- In a web browser, go to https://github.com/ and create a user account
-- Choose a job-appropriate user name if possible
+- Run the following commands in Terminal to configure git:
 
-![git-homepage](img/git-homepage.png)
+	`$ git config --global user.name "[insert your user name here]"`  
+	`$ git config --global user.email "[insert your email here]"`
 
-### Basic git configuration
-- In Terminal, add your User info, so GitHub recognizes your commits with the following bash commands (and replace Jill's info with your own):  
-`$ git config --global user.name "Jill Insight"`  
-`$ git config --global user.email "jill.insight@gmail.com"`
+- Tip: The gloabl config settings can be accessed and manually edited in `~/.gitconfig`
 
-These global config settings live in ~/.gitconfig and can also be manually edited there.
+### 4. Fork the tutorial repository to your account
 
-### Set up tutorial
-From this page, fork (or make a copy of) this repository, github-tutorial, by clicking the Fork button in the top right corner of the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial). Select your account.
+Fork the tutorial repository to your account through the Github webpage. This makes a copy of the original repository on your account.
+
+- On the [GitHub repo page](https://github.com/InsightDataScience/github-tutorial), in the top right corner of the page under the photo of your account, click the Fork button (see below for example).
+- Select your account when prompted. This should fork the github-tutorial repository to your account.
+
+Tip: If you successfully forked the tutorial repository, you should see the name of the repository as [your user name]/github-tutorial
 
 ![git-fork](img/git-fork.png)
 
-After selecting your account, you should have been sent to the github-tutorial repository you just forked to your account.
+### 5. Clone the repository to your local machine
 
-Click the green Clone or download button on the right side of the page. Select Use HTTPS if the option is available. Copy the link.
+Clone this repository (the remote repository) to your local machine.
 
-In a Terminal, navigate to your development folder, then clone the github-tutorial repository into your development folder by running the command `git clone` + the link you just copied.
-`$ cd home/your development folder`
-`$ git clone https://github.com/yourusername/github-tutorial.git`
+- On your tutorial repository webpage, click the green "Clone or download" button on the right side of the page.
+- Select the "Use HTTPS" option if it is available.
+- Copy the link.
 
-![git-clone](img/git-clone.png)
+- In Terminal, navigate to your development folder.
+
+	`$ cd [path to your development folder]`
+
+- Type `git clone` into Terminal, followed by the repository link you copied (see below for example)
+	  
+	`$ git clone [link to your forked tutorial repository]`
+
+<!--![git-clone](img/git-clone.png)-->
+
+### You are now ready to use version control with Git and Github!
 
 # Git Concepts and Vocabulary
 
 ### Change (aka Diff)
 
-Git maintains version control by tracking the changes or diffs between file versions. You can change a file by doing one of two things:
+Git maintains version control by tracking the changes or diffs between file versions. 
+
+You can change a file by doing one of two things:  
 1. File creation, renaming, or deletion.  
 2. Insertion or deletion of a line in a file (a modified line is both an insertion and a deletion)
 
+Git represents insertions or added changes with a `+` and deletions or removed changes with a `-`
+
 ![git-hello-diff](img/git-hello-diff.png)
+
+Tip: You can use the command `git diff` to see how a file has changed since its last commit or between two branches.
 
 ### Commit
 
-A series of changes that records incremental updates to a series of files.
+Commits are a series of changes that records incremental updates to a series of files.
 
-Has a global unique hash (calculated from contents of file) that serves as an identifier.
+Each commit a global unique hash (calculated from contents of file) that serves as an identifier.
 
 ![git-commit](img/git-commit.png)
 
 ### Branch
 
-A linear series of commits.
+A branch refers to a linear series of commits.
 
 A codebase can be calculated by applying changes to files in each commit in succession.
 
@@ -87,7 +116,7 @@ A codebase can be calculated by applying changes to files in each commit in succ
 
 ### Repository
 
-A tree structure containing many branches. Each branch represents a different state of the code. 
+A repository refers to a tree structure that contains many branches. Each branch represents a different state of the code. 
 
 Branches can be formed at any commit, and two branches can be merged together by summing their changes (assuming there are no conflicts).
 
@@ -95,112 +124,177 @@ Branches can be formed at any commit, and two branches can be merged together by
 
 ## Basic Workflow
 
-### Add a File to be Tracked by Git
-- In a Terminal, navigate to your repository and create a python file called `hello.py` using your favorite editor (e.g., `nano hello.py`, `vim hello.py`, `subl hello.py`)
-- Write some (very simple) code
-- Add the file to be tracked by git:  
-`$ git add hello.py` 
+There are three basic commands that part of the typical workflow when doing version control with git. These commands are **add, commit and push**.
 
- ![git-hello-1](img/git-hello-1.png)
+### 0. Create a file
 
-### Commit the Tracked File
-- Commit the added file to the git repo and add a message describing the change:  
-`$ git commit -m "Initial commit"`  
+First, create an example file to track using Git.
 
-### Push Updates to a Repository
-- Use `git push origin master` to push local commits to the remote branch:  
-`$ git push origin master`
+- In Terminal, navigate to your repository folder.
+- Create a Python file called `hello.py` using your favorite editor
+- Write some (very simple) code and save the file.
 
-### Useful Calls
-**git status**
-- To check the status of your repo (which branch you're on, which files are untracked, which files are modified, which files are added/tracked), use `git status`  
-`$ git status`
+	```
+	def hello(name):  
+		print("Hello " + name)
 
-**git diff**
-- To see how your file has changed before you add/commit the file, use `git diff`  
-`$ git diff hello.py`
+	if __name__ == "__main__":
+		hello()
+	```
 
-## Additional Info
+### 1. git add
 
-### Ignore Files in the Repository
-- Sometimes there are sensitive files you do not want tracked to Github (e.g., passwords)
-- In your repository, add file names to the `.gitignore` file to prevent them from being revision controlled.
-- Make a file called `credentials.json` in your directory
-- Open (or create) the file `.gitignore` and add `credentials.json` to the file. Save and close.
-- Add, commit, and push your changes to the `.gitignore` file:  
-`$ git add .gitignore`  
-`$ git commit -m "Modifying .gitignore"`  
-`$ git push origin master`
+After creating the file, add the file to be tracked using Git.
 
-### Create a GitHub Repo
-On GitHub create a new repository named `git-demo` by clicking on Respositories, then New from your home page.
+- In Terminal, use `git add` followed by the filename to add the file to be tracked.
 
-![git-profile](img/git-profile.png)
+	`$ git add hello.py`
 
-Initialize with a Readme and add a .gitignore
+### 2. git commit
 
-![git-repo-create](img/git-repo-create.png)
+After adding the file to be tracked, commit the changes to be tracked using Git.
 
-Now your repo is created! From the home page of your repo, copy the repo URL. 
+- In Terminal, use `git commit - m` followed by a short message to commit the changes.
 
-![git-new-repo-clone](img/git-new-repo-clone.png)
+	`$ git commit -m "Initial commit"`
 
-Clone the repo to your development folder on your local machine.  
-`$ git clone https://github.com/jillinsight/git-demo.git`
+- Tip: Try and make your messages short but meaningful.
+- Tip: It is possible, and sometimes encouraged, to add multiple files before making a single commit that encompasses all the changes to those files.
 
-### Developing on a new branch
-*Create a new branch locally*
-- To create a new branch, use the following command. Replace `add-excitement` with the name of your new branch  
-`$ git checkout -b add-excitement`
+### 3. git push
 
-*Push the new branch to remote*  
-- Push the new branch to remote  
-`$ git push origin add-excitement`
+After commiting the changes, push the changes from your local machine to the remote repository.
 
-*Commit to a new branch*
-- Make a change to `hello.py` by adding exclamation points after "Hello World"
-- After making this change, push your changes to the new branch  
-`$ git add hello.py`  
-`$ git commit -m "Add excitement to hello world"`  
-`$ git push origin add-excitement`
+- In Terminal, use `git push origin` followed by the name of the branch you are pushing.
 
-![git-hello-2](img/git-hello-2.png)
+	`$ git push origin master`
 
-*Merge a new branch*
-- Checkout the branch you want to merge into (preferably the branch you created the new branch off of)
-- Merge the changed branch into that branch  
-`$ git checkout master`  
-`$ git merge add-excitement`
+### Useful Git Commands
 
-*Delete the new branch*
-- If you are done developing on the new branch, delete the branch locally and remotely  
-`$ git branch -d add-excitement # local delete`  
-`$ git push origin --delete add-excitement # remote delete`
+There are many other useful Git commands to help you track the status of your files.
 
-*Git Branch*
-- To see which branch you're on, use `git branch` or `git status`
+`git status` allows you to check the status of your repo, including:
+- Which branch you are working on
+- Which files are tracked or untracked
+- Which files are modified
+
+`git diff` followed by the file name allows you to check the changes to the given file
+
+## Additional Information
+
+### .gitignore
+
+Sometimes there are sensitive (or irrelevant) files that you do not want tracked by Git (e.g., passwords).
+
+Git uses a hidden file called *.gitignore* to indicate which files or file types (e.g., *.pkl, *.ipynb_checkpoints) not to track. After adding file names to the *.gitignore* file, changes made to files that match those names will not be tracked.
+
+Example:
+
+- Create a file called "credentials.json" in the directory of your repository.
+- If you run `git status`, you should see "credentials.json" under the untracked files section.
+- Create a file called *.gitignore* if it does not exist.
+- Add the text "credentials.json" to the *.gitignore* file
+- Save and close the *.gitignore* file
+- If you run `git status`, "credentials.json" should no longer appear.
+
+It's good practice to add, commit, and push the *.gitignore* file to Github so that your collaborators can see (and add) which files are not being tracked in the repository.
+
+### Create a GitHub Repository
+
+You can create a new repository through the Github webpage.
+
+- From your Github profile on the Github webpage, click on the link, Repositories, located next to Overview.
+- Click on the green button labeled "New" located on the right side of the page.
+- Create and add a name for your repository.
+- Select the option to "Initialize this repository with a README"
+- Add a .gitignore file by selecting an option from the dropdown menu.
+	- Each option represents a default .gitignore file for the given option.
+	- For example, the Python option will by default include *.ipynb_checkpoints
+
+To clone the repository to your local machine, follow the steps outlined earlier.
+
+### Create a new branch
+
+One of the most useful features of Git is the ability to develop on multiple branches.
+
+To **create** a new branch on your local machine, use `git checkout -b` followed by the name of your new branch.  
+	`$ git checkout -b add_excitement`
+
+To **add** the new branch to your remote repository, use `git push origin` followed by the name of the branch.  
+	`$ git push origin add_excitement`
+
+Use the basic add, commit, and push commands (pointing to this new branch) to develop on this branch.
+
+To **merge** one branch into another, use `git checkout` followed by the branch you want to merge into and `git merge` followed by the branch you are merging into the first branch.
+	
+	$ git checkout master
+	$ git merge add_excitement
+	
+To **locally delete** the branch, use `git branch -d` followed by the branch name.
+
+To **remotely delete** the branch, use `git push origin --delete` followed by the branch name.
+
+	$ git branch -d add_excitement # local delete
+	$ git push origin --delete add_excitement # remote delte
+
+**WARNING:** Performing these delete commands will remove any changes you made to files tracked on these branches. Make sure you have merged any changes you wish to keep into live branches before deleting old branches.
+
+Use `git branch` to see which branch you are currently working on. `git status` also notes which branch you are currently on.
+
+	$ git branch
+	$ git status
 
 ### Pull Requests
 
-*Create a pull request*
-- When developing on a team, you rarely merge branches locally. You will typically merge branches via pull requests.
-- On the GitHub repo, click on Pull requests from the options.
-- Click the New pull request button
-- From the dropdown menu, select the branch you want to serve as your base (the branch you will merge into). Select the branch you want to merge from the compare dropdown.
-- Click Create pull request.
-- Assign someone to review your code and click Create pull request
+When developing on a team, you rarely merge branches locally (i.e., the process described above).
 
-*Accept a pull request*
-- If you are reviewing a pull request, check out the Commits and Files changed to view diffs between the base branch and compare branch.
-- If you are happy with the changes (and there are no conflicts), click Merge pull request and Confirm request. (Don't forget to add a comment telling your co-developer what an awesome job they did!)
-- Delete the branch if it is no longer needed (remotely)
+Typically branches are merged using pull requests (which also includes code review).
 
-*Pull changes to local*
-- Don't forget to pull the changed branch back down to your local machine after a pull request is made. Replace master with the branch you merged into.  
-`$ git pull origin master`
+A pull request is basically a request to another member of your team to review your code. If they think it looks good, they can accept the pull request (or PR) and merge your branch into another one, such as master or a main feature branch.
 
-*Delete the local branch*
-- If you deleted the remote branch, delete the local branch
+#### 1. Create a pull request
+
+Create a pull request by going to the webpage of the Github repository.
+
+- On the Github repository page, click on the "Pull requests" link next to "Code" and "Issues".
+- Select the green "New pull request" button on the right side of the page.
+- Use the left-most dropdown menu, "base:", to select the branch you want to merge into.
+- Use the second dropdown menu, "compare:", to select the branch that you want to merge.
+- Click the green "Create pull request" button to access the options to create the pull request.
+- Leave a comment if you want to elaborate on the reason for the pull request or provide an update on the changes you made to the branch.
+- Click on the gear button next to "Assignees" to assign someone to review and merge the pull request. This has to be someone who is a collaborator on the project.
+- Select the green "Create pull request" button to open the pull request.
+
+#### 2. Accept a pull request
+
+On the Github repository webpage, review the pull request, accept changes, and merge the branch.
+
+- To review the pull request, check the "Commits" and "Files changed" options to review the code.
+- Within "Files changed", it's possible to add comments to single lines of code by selecting the "+" symbols next to each line. You have the option of submitting single comments or adding them to a review.
+- It's possible (but not necessary) to submit a full review by selecting the green "Review changes" button.
+- If the changes look good to you, on the "Conversations" tab, select the green "Merge pull request" button.
+- Select the green "Confirm merge" button to complete the merge. Add a comment at this stage if you would like to comment on the merge.
+
+#### 3. Delete the merged branch remotely
+
+After merging the branch, it's good practice to delete the working branch to declutter the repository.
+
+- On the pull request webpage, select the grey button called "Delete branch" to delete the merged branch remotely.
+
+#### 4. Delete the merged branch locally
+
+Before deleting the local merged branch, pull the changes into the base branch, then delete the local branch
+
+- In Terminal, switch to the base branch using `git checkout` followed by the name of the base branch.
+- Pull the merged changes using `git pull origin` followed by the name of the base branch.
+- Delete the merged branch using `git branch -d` followed by the name of the merged branch.
+	```
+	$ git checkout master
+	$ git pull origin master
+	$ git branch -d add_excitement
+	```
+
+**WARNING:** Remember that when you delete a branch, you delete any of the changes that were tracked on it. Double check that your changes were merged into a live branch before deleting the branch.
 
 ## Best Practices
 
